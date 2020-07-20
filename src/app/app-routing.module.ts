@@ -5,6 +5,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { NotFoundComponent } from './util/not-found/not-found.component';
 import { HomeLayoutComponent } from './components/home-layout/home-layout.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { CartComponent } from './components/shopping-cart/cart/cart.component';
 
 
 const routes: Routes = [
@@ -24,6 +26,11 @@ const routes: Routes = [
         path: 'signin',
         component: SigninComponent
       },
+      {
+        path: 'shopping',
+        component: ShoppingCartComponent,
+      
+      }
     ]
   },
   // {
