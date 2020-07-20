@@ -3,6 +3,7 @@ import { NgForm, FormBuilder, FormGroup, Validators, FormControl } from '@angula
 import { Observable } from 'rxjs';
 import { LoginService } from 'src/app/services/login.service';
 import { Register } from '../../Register';
+import { error } from 'protractor';
 
 @Component({
   selector: 'app-signup',
@@ -10,37 +11,28 @@ import { Register } from '../../Register';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+  model: any = {};
+  // data = false;
+  // UserForm: any;
+  // massage: string;
 
-  employeeForm: FormGroup;
-  data = false;
-  UserForm: any;
-  massage: string;
-
-  constructor(private formbulider: FormBuilder, private loginService: LoginService) { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit() {
-    this.employeeForm = this.formbulider.group({
-      UserName: ['', [Validators.required]],
-      LoginName: ['', [Validators.required]],
-      Password: ['', [Validators.required]],
-      Email: ['', [Validators.required]],
-      ContactNo: ['', [Validators.required]],
-      Address: ['', [Validators.required]],
-    });
+
   }
 
-  onFormSubmit(form: FormGroup) {
-    const user = this.employeeForm.value;
-    this.Createemployee(user);
-    console.log(user);
-    
-  }
-  Createemployee(register: Register) {
-    this.loginService.CreateUser(register).subscribe(
-      () => {
-        this.data = true;
-        this.massage = 'Data saved Successfully';
-        this.employeeForm.reset();
+  //   register() {
+  //   console.log(this.model);
+  // }
+
+  register() {
+    this.loginService.register(this.model).
+      subscribe(next => {
+        console.log('Registered successfully');
+      },
+      error => {
+        console.log('Register failed', error);
       });
   }
 

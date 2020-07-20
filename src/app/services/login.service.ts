@@ -1,36 +1,31 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';  
-import {HttpHeaders} from '@angular/common/http';  
-import { from, Observable } from 'rxjs';  
-import { Register } from "../Register";  
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  Url :string;  
-  token : string;  
-  header : any;  
+  baseUrl = environment.API_URL;
 
-  constructor(private http: HttpClient) { 
-
-    this.Url = 'http://localhost:14812/api/Login/'; 
-
-    const headerSettings: {[name: string]: string | string[]; } = {};  
-    this.header = new HttpHeaders(headerSettings);  
-
+  constructor(private http: HttpClient) {
+  }
+  
+  login(model: any) {
+    return this.http.post(this.baseUrl + 'login', model).pipe(
+      map((response: any) => {
+        const user = response;
+        if(user) {
+          localStorage.setItem('token',user.token);
+        }
+      })
+    );
   }
 
-  Login(model : any){  
-    debugger;  
-     var a =this.Url+'UserLogin';  
-   return this.http.post<any>(this.Url+'UserLogin',model,{ headers: this.header});  
-  }  
-   CreateUser(register:Register)  
-   {  
-    const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };  
-    return this.http.post<Register[]>(this.Url + '/createcontact/', register, httpOptions)  
-   }  
-   
+  register(model: any) {
+    return this.http.post(this.baseUrl+'register', model);
+  }
+ 
 }

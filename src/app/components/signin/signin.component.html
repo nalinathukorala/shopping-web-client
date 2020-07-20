@@ -39,22 +39,20 @@
       </div>  
     </div>  
   </div> -->
-
-
 <div class="container" style="padding-top:40px;">
     <div class="row">
         <div class="col-md-6 mx-auto">
             <div class="card mx-4">
                 <div class="card-body p-4">
-                    <form name="form" (ngSubmit)="login(f)" #f="ngForm">
+                    <form name="form" (ngSubmit)="login()" #f="ngForm">
                         <h1 style="text-align:center">Login</h1>
                         <div class="input-group mb-3">
-                            <input type="text" name="UserName" [(ngModel)]="model.UserName" class="form-control sty1" placeholder="Email" required>
+                            <input type="text" name="UserName" [(ngModel)]="model.Email" class="form-control sty1" placeholder="Email" required>
                         </div>
                         <div class="input-group mb-3">
                             <input type="password" name="Passward" [(ngModel)]="model.Password" class="form-control" placeholder="Password" required>
                         </div>
-                        <button type="submit" class="btn btn-block btn-success">Add User</button>
+                        <button type="submit" class="btn btn-block btn-success">Log In</button>
                     </form>
                 </div>
             </div>

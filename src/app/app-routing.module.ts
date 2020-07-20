@@ -4,28 +4,34 @@ import { HomeComponent } from './components/home/home.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { NotFoundComponent } from './util/not-found/not-found.component';
+import { HomeLayoutComponent } from './components/home-layout/home-layout.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: HomeLayoutComponent,
+    children: [
+      {
+        path: '',
+        component: HomeComponent
+      },
+      {
+        path: 'signup',
+        component: SignupComponent
+      },
+      {
+        path: 'signin',
+        component: SigninComponent
+      },
+    ]
   },
+  // {
+  //   path: '**', pathMatch: 'full', redirectTo:''
+  // }
   {
-    path: 'home/signup',
-    component: SignupComponent
-  },
-  {
-    path: 'home/signin',
-    component: SigninComponent
-  },
-  {
-    path: '404',
+    path: '**', 
     component: NotFoundComponent
-  },
-  {
-    path: '**',
-    redirectTo: '/404'
   }
   
 
