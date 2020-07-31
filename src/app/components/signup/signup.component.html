@@ -3,41 +3,102 @@
     <div class="col-md-6 mx-auto">
       <div class="card mx-4">
         <div class="card-body p-4">
-          <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm">
+          <form name="form" (ngSubmit)="register()" #f="ngForm">
             <h1 style="text-align:center">Register</h1>
-            <div class="form-group input-group mb-3">
-              <input type="text" name="FirstName" [(ngModel)]="model.FirstName" class="form-control sty1"
-                placeholder="FirstName" required #firstName="ngModel">
+              <div class="form-group input-group mb-3">
+                <input type="text" name="FirstName" [(ngModel)]="model.FirstName" class="form-control sty1" 
+                placeholder="FirstName" required #FirstName="ngModel" />
+            </div>
+            <div *ngIf="FirstName.touched">
+                <p *ngIf="FirstName.errors?.required">
+                    FirstName is required.
+                </p>
             </div>
             <div class="form-group input-group mb-3">
-              <input type="text" name="LastName" [(ngModel)]="model.LastName" class="form-control sty1"
-                placeholder="LastName" required>
+                <input type="text" name="LastName" [(ngModel)]="model.LastName" class="form-control sty1" 
+                placeholder="LastName" required #LastName="ngModel" />
+            </div>
+            <div *ngIf="LastName.touched">
+                <p *ngIf="LastName.errors?.required">
+                    LastName is required.
+                </p>
             </div>
             <div class="form-group input-group mb-3">
-              <input type="text" name="City" [(ngModel)]="model.City" class="form-control sty1" placeholder="City"
-                required>
+                <input type="text" name="PhoneNo" [(ngModel)]="model.PhoneNo" class="form-control sty1"
+                 placeholder="Phone number" required #PhoneNo="ngModel" />
+            </div>
+            <div *ngIf="PhoneNo.touched">
+                <p *ngIf="PhoneNo.errors?.required">
+                    PhoneNo is required.
+                </p>
             </div>
             <div class="form-group input-group mb-3">
-              <input type="text" name="State" [(ngModel)]="model.State" class="form-control sty1" placeholder="State"
-                required>
+                <input type="text" name="City" [(ngModel)]="model.City" class="form-control sty1" 
+                placeholder="City" required #City="ngModel" />
             </div>
+            
+            <div *ngIf="City.touched">
+                <p *ngIf="City.errors?.required">
+                    City is required.
+                </p>
+            </div>
+            
             <div class="form-group input-group mb-3">
-              <input type="text" name="Street" [(ngModel)]="model.Street" class="form-control sty1" placeholder="Street"
-                required>
+                <input type="text" name="State" [(ngModel)]="model.State" class="form-control sty1" 
+                placeholder="State" required #State="ngModel" />
             </div>
+            
+            <div *ngIf="State.touched">
+                <p *ngIf="State.errors?.required">
+                    State is required.
+                </p>
+            </div>
+            
+            <div class="form-group input-group mb-3">
+                <input type="text" name="Street" [(ngModel)]="model.Street" class="form-control sty1"
+                 placeholder="Street" required #Street="ngModel" />
+            </div>
+            
+            <div *ngIf="Street.touched">
+                <p *ngIf="Street.errors?.required">
+                    Street is required.
+                </p>
+            </div>
+            
             <div class="forms-group input-group mb-3">
-              <input type="text" name="ZipCode" [(ngModel)]="model.ZipCode" class="form-control sty1"
-                placeholder="ZipCode" required>
+                <input type="text" name="ZipCode" [(ngModel)]="model.ZipCode" class="form-control sty1"
+                 placeholder="ZipCode" required #ZipCode="ngModel" />
             </div>
+            
+            <div *ngIf="ZipCode.touched">
+                <p *ngIf="ZipCode.errors?.required">
+                    ZipCode is required.
+                </p>
+            </div>
+            
             <div class="form-group input-group mb-3">
-              <input type="text" name="UserName" [(ngModel)]="model.Email" class="form-control sty1" placeholder="Email"
-                required>
+                <input type="text" name="UserName" [(ngModel)]="model.Email" class="form-control sty1"
+                 placeholder="Email" required #UserName="ngModel" />
             </div>
+            
+            <div *ngIf="UserName.touched">
+                <p *ngIf="UserName.errors?.required">
+                    Email is required.
+                </p>
+            </div>
+            
             <div class="form-group input-group mb-3">
-              <input type="password" name="Passward" [(ngModel)]="model.Password" class="form-control"
-                placeholder="Password" required>
+                <input type="password" name="Passward" [(ngModel)]="model.Password" class="form-control" 
+                placeholder="Password" required #Passward="ngModel" />
             </div>
-            <button type="submit" class="btn btn-block btn-success">Register</button>
+            
+            <div *ngIf="Passward.touched">
+                <p *ngIf="Passward.errors?.required">
+                    Passward is required.
+                </p>
+            </div>
+            <!-- <button type="submit" class="btn btn-block btn-success" [disabled]="!f.valid">Register</button> -->
+            <button type="submit" class="btn btn-block btn-success" >Register</button>
           </form>
         </div>
       </div>

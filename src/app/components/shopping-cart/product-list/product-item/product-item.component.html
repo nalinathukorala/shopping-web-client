@@ -1,4 +1,4 @@
-<div class="card mb-4 shadow-sm">
+<!-- <div class="card mb-4 shadow-sm">
     <img class="bd-placeholder-img card-img-top" width="100%" 
     src="https://www.outletinn.com/f/13702/137022076/timberland-skape-park-slip-on.jpg"/>
        
@@ -9,8 +9,26 @@
         <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-primary product-btn">Add to Cart</button>
-                <button type="button" class="btn btn-sm btn-secondary product-btn">View Detailes</button>
+                <button type="button" (click)="viewProduct()" class="btn btn-sm btn-secondary product-btn">View Detailes</button>
             </div>
         </div>
     </div>
-</div>
+</div> -->
+<div class="card mb-4 shadow-sm">
+    <img class="bd-placeholder-img card-img-top p-2" width="100%" [src]="productItem.imageUrl" />
+    <div class="card-body">
+      <p class="card-text">
+        <strong>{{productItem.price | currency}}</strong>
+        <i class="fas fa-heart float-right" ></i>
+        <i  class="far fa-heart float-right"></i>
+      </p>
+      <p class="card-text">{{productItem.description | slice: 0:60}}....</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-primary product-btn" (click)="handleAddToCart()">Add to
+            Cart</button>
+          <button routerLink="/product-details/{{productItem.id}}" type="button" class="btn btn-sm btn-outline-secondary product-btn" >View Details</button>
+        </div>
+      </div>
+    </div>
+  </div>

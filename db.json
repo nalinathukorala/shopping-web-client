@@ -1,0 +1,65 @@
+{
+  "productus": [
+    {
+      "id": 1,
+      "name":"Shoes",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's .",
+      "imageUrl": "https://www.outletinn.com/f/13702/137022076/timberland-skape-park-slip-on.jpg",
+      "price": 300
+      
+    },
+    {
+      "id": 2,
+      "name":"Shoes",
+      "description": "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ",
+      "imageUrl": "https://www.outletinn.com/f/13702/137022076/timberland-skape-park-slip-on.jpg",
+      "price": 300
+    },
+    {
+      "id": 3,
+      "name":"Shoes",
+      "description": "any desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ",
+      "imageUrl": "https://www.outletinn.com/f/13702/137022076/timberland-skape-park-slip-on.jpg",
+      "price": 300
+    },
+    {
+      "id": 4,
+      "name":"Shoes",
+      "description": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 ",
+      "imageUrl": "https://www.outletinn.com/f/13702/137022076/timberland-skape-park-slip-on.jpg",
+      "price": 300
+    },
+    {
+      "id": 5,
+      "name":"Shoes",
+
+      "description": "discovered the Lorem Ipsum source. Lorem Ipsum sections 1.10.32 and 1.10.33 of  (The Extremes of Good and Evil) by Cicero, written in 45 BC. ",
+      "imageUrl": "https://www.outletinn.com/f/13702/137022076/timberland-skape-park-slip-on.jpg",
+      "price": 300
+    },
+    {
+      "id": 6,
+      "name":"Shoes",
+      "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point '",
+      "imageUrl": "https://www.outletinn.com/f/13702/137022076/timberland-skape-park-slip-on.jpg",
+      "price": 300
+    }
+  ],
+  "posts": [
+    {
+      "id": 6,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

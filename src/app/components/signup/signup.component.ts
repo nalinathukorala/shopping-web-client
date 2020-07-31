@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { LoginService } from 'src/app/services/login.service';
 import { Register } from '../../Register';
 import { error } from 'protractor';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-signup',
@@ -16,7 +17,7 @@ export class SignupComponent implements OnInit {
   // UserForm: any;
   // massage: string;
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, private notificationService: NotificationService) { }
 
   ngOnInit() {
 
@@ -30,9 +31,11 @@ export class SignupComponent implements OnInit {
     this.loginService.register(this.model).
       subscribe(next => {
         console.log('Registered successfully');
+        this.notificationService.showSuccess("dasda","");
       },
       error => {
         console.log('Register failed', error);
+        this.notificationService.showError("dasda","");
       });
   }
 

@@ -7,6 +7,7 @@ import { NotFoundComponent } from './util/not-found/not-found.component';
 import { HomeLayoutComponent } from './components/home-layout/home-layout.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { CartComponent } from './components/shopping-cart/cart/cart.component';
+import { ProductDetailesComponent } from './components/shopping-cart/product-list/product-detailes/product-detailes.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: HomeComponent
+        component: ShoppingCartComponent
+        
       },
       {
         path: 'signup',
@@ -28,8 +30,15 @@ const routes: Routes = [
       },
       {
         path: 'shopping',
-        component: ShoppingCartComponent,
-      
+        component: ShoppingCartComponent
+      },
+      {
+        path: 'product-details/:id',
+        component: ProductDetailesComponent
+      },
+      {
+        path: 'cart',
+        component: CartComponent
       }
     ]
   },

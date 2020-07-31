@@ -9,16 +9,18 @@ import { environment } from '../../environments/environment';
 export class LoginService {
 
   baseUrl = environment.API_URL;
+  temp_url = 'http://localhost:4076/api/auth/'
 
   constructor(private http: HttpClient) {
   }
   
   login(model: any) {
-    return this.http.post(this.baseUrl + 'login', model).pipe(
+    return this.http.post(this.temp_url + 'login', model).pipe(
       map((response: any) => {
         const user = response;
         if(user) {
           localStorage.setItem('token',user.token);
+          // console.log(user.token);
         }
       })
     );

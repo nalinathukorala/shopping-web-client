@@ -1,4 +1,4 @@
-<span>
+<!-- <span>
     Item 1
 </span>
 x
@@ -7,4 +7,9 @@ x
 </span>:
 <strong>
     {{500 | currency}}
-</strong>
+</strong> -->
+<div class="cart_item">
+    <span>{{cartItem.productName}}</span> x
+    <span>{{cartItem.quantity}}</span>
+    <span>{{(cartItem.quantity * cartItem.price) | currency}}</span>
+</div>

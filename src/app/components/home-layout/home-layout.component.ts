@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NotificationService } from '../../services/notification.service';
 
 @Component({
   selector: 'app-home-layout',
@@ -8,25 +7,10 @@ import { NotificationService } from '../../services/notification.service';
 })
 export class HomeLayoutComponent implements OnInit {
 
-  constructor(private notifyService : NotificationService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  showToasterSuccess() {
-    this.notifyService.showSuccess("Data shown successfully !!", "ItSolutionStuff.com")
-  }
-
-  showToasterError() {
-    this.notifyService.showError("Loggin eroor", "ItSolutionStuff.com")
-  }
-
-  showToasterInfo() {
-    this.notifyService.showInfo("This is info", "ItSolutionStuff.com")
-  }
-
-  showToasterWarning() {
-    this.notifyService.showWarning("This is warning", "ItSolutionStuff.com")
-  }
 
 }
